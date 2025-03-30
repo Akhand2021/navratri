@@ -120,13 +120,26 @@
             background: linear-gradient(45deg, #ff758c, #ff7eb3);
         }
     </style>
+
 </head>
+<!-- 
+Brahmacharini.jpg  
+Kalaratri.jpg  
+Kushmanda.jpg  
+Saliputrimata.jpg  
+Skandamata.jpg  
+lamp.png
+Chandraghanta.jpg  
+Katyayani.jpg  
+Mahagauri.jpg  
+Siddhidatri.jpg    
+-->
 
 <body>
     <div class="container mx-auto flex flex-col items-center justify-center">
         <div class="relative p-4">
             <div class="flex justify-center relative">
-                <img class="border-4 border-yellow-400 rounded-full w-48 h-48 md:w-64 md:h-64" src="Saliputrimata.jpg"
+                <img class="border-4 border-yellow-400 rounded-full w-48 h-48 md:w-64 md:h-64" id="goddess-image" src="navdurga.jpg"
                     alt="Goddess Durga">
                 <img src="lamp.png" alt="Diya" class="absolute diya left-1 top-1/2 md:left-1/4 md:top-1/2">
                 <img src="lamp.png" alt="Diya" class="absolute diya right-1 top-1/2 md:right-1/4 md:top-1/2">
@@ -144,6 +157,29 @@
     </div>
 
     <script>
+        const goddessImages = [
+            "Saliputrimata.jpg",   // Day 1 - Shailputri
+            "Brahmacharini.jpg",   // Day 2 - Brahmacharini
+            "Chandraghanta.jpg",   // Day 3 - Chandraghanta
+            "Kushmanda.jpg",       // Day 4 - Kushmanda
+            "Skandamata.jpg",      // Day 5 - Skandamata
+            "Katyayani.jpg",       // Day 6 - Katyayani
+            "Kalaratri.jpg",       // Day 7 - Kalaratri
+            "Mahagauri.jpg",       // Day 8 - Mahagauri
+            "Siddhidatri.jpg"      // Day 9 - Siddhidatri
+        ];
+
+        function setGoddessImage() {
+            const startDate = new Date("2025-03-30 12:00:00"); 
+            const today = new Date();
+            const diff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)); 
+            const dayIndex = diff % 9; 
+            document.getElementById("goddess-image").src = goddessImages[dayIndex];
+        }
+
+        // Call function on page load
+        window.onload = setGoddessImage;
+
         const wishes = [
             "माँ दुर्गा का आशीर्वाद, आपकी सभी मनोकामनाएँ पूर्ण करे। शुभ नवरात्रि!",
             "May Maa Durga bless you with health, wealth, and happiness!",
