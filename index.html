@@ -27,15 +27,31 @@
         }
 
         @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         @keyframes glow {
-            0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FF6347; }
-            50% { text-shadow: 0 0 20px #FF4500, 0 0 30px #FFD700; }
-            100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FF6347; }
+            0% {
+                text-shadow: 0 0 5px #FFD700, 0 0 10px #FF6347;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #FF4500, 0 0 30px #FFD700;
+            }
+
+            100% {
+                text-shadow: 0 0 5px #FFD700, 0 0 10px #FF6347;
+            }
         }
 
         .container {
@@ -61,8 +77,15 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .gradient-button {
@@ -89,13 +112,17 @@
     <div class="container mx-auto flex flex-col items-center justify-center">
         <div class="relative p-4">
             <div class="flex justify-center relative">
-                <img class="border-4 border-yellow-400 rounded-full w-48 h-48 md:w-64 md:h-64" src="Saliputrimata.jpg" alt="Goddess Durga">
+                <img class="border-4 border-yellow-400 rounded-full w-48 h-48 md:w-64 md:h-64" src="Saliputrimata.jpg"
+                    alt="Goddess Durga">
                 <img src="lamp.png" alt="Diya" class="absolute diya left-0 top-1/2">
                 <img src="lamp.png" alt="Diya" class="absolute diya right-0 top-1/2">
             </div>
             <div class="flex flex-col mt-3 items-center justify-center">
-                <h1 class="animate-bounce text-white text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 p-2 rounded-lg">✨ Happy Navratri ✨</h1>
-                <p class="wish text-white bg-gradient-to-r from-orange-500 via-yellow-400 to-red-500 p-2 rounded-md" id="wish-text">Wishing you nine nights of devotion, joy, and celebration!</p>
+                <h1
+                    class="animate-bounce text-white text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 p-2 rounded-lg">
+                    ✨ Happy Navratri ✨</h1>
+                <p class="wish text-white bg-gradient-to-r from-orange-500 via-yellow-400 to-red-500 p-2 rounded-md"
+                    id="wish-text">Wishing you nine nights of devotion, joy, and celebration!</p>
                 <button class="gradient-button" onclick="generateWish()">✨ Get New Blessing ✨</button>
                 <button class="gradient-button" onclick="shareWish()">📤 Share on WhatsApp</button>
             </div>
@@ -122,9 +149,10 @@
 
         function shareWish() {
             const text = document.getElementById('wish-text').innerText;
-            const url = `https://wa.me/?text=${encodeURIComponent(text + ' 🌺 #ShubhNavratri')}`;
+            const url = `https://wa.me/?text=${encodeURIComponent(text + ' 🌺 #ShubhNavratri\n\nVisit here: https://akhand2021.github.io/navratri/')}`;
             window.open(url, '_blank');
         }
+
     </script>
 </body>
 
